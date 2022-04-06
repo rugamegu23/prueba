@@ -1,0 +1,52 @@
+<h3>Prueba</h3>
+<div class="container">
+  <form [formGroup]="formGroup" (ngSubmit)="submit()">
+    <div>
+      <h4>Caja texto</h4>
+      <input id="cajaTexto" type="text" formControlName="cajaTexto" required />
+    </div>
+
+    <div>
+      <h4>Caja Numerica</h4>
+      <input
+        id="cajaNumerica"
+        type="number"
+        formControlName="cajaNumerica"
+        required
+      />
+    </div>
+
+    <div>
+      <h4>Selector</h4>
+      <select
+        class="form-select"
+        aria-label="Seleccion"
+        formControlName="selector"
+        required
+      >
+        <option selected value="0">Opcion 0</option>
+        <option value="1">Opcion 1</option>
+        <option value="2">Opcion 2</option>
+      </select>
+    </div>
+
+    <div>
+      <h4>Comentario</h4>
+      <textarea
+        name="comentario"
+        id="comentario"
+        cols="30"
+        rows="10"
+        formControlName="comentario"
+      ></textarea>
+    </div>
+
+    <button
+      class="btn btn-success"
+      type="submit"
+      [disabled]="formGroup.invalid"
+    >
+      Submit
+    </button>
+  </form>
+</div>
